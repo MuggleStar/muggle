@@ -1,6 +1,7 @@
 package tests;
 
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.tenet.generator.utils.GeneratorHelp;
 import org.junit.Test;
 
 /**
@@ -20,9 +21,13 @@ public class GeneratorTest {
         dataSourceConfig.setPassword("root");
         GeneratorHelp generatorHelp = new GeneratorHelp(dataSourceConfig);
         generatorHelp.setAuthor("Madison");
-        generatorHelp.setPackageName("com.mugglestar");
+        generatorHelp.setPackageName("com.tenet.backend");
 
-        generatorHelp.execute("bcMemu","bc_menu","");
+        generatorHelp.execute("menu","bc_menu","");
+        generatorHelp.execute("role","bc_role_menu","");
+        generatorHelp.execute("role","bc_role","");
+        generatorHelp.execute("user","bc_user_role","");
+        generatorHelp.execute("user","bc_user","");
 
     }
 

@@ -2,6 +2,8 @@ package com.tenet.goods.api.entity.goods;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+
+import com.tenet.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,9 +18,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("go_sku_stock")
-public class GoSkuStock implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class GoSkuStock extends BaseEntity {
 
     /**
      * 库存对应的商品sku id

@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.tenet.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,9 +20,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("go_category")
-public class GoCategory implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class GoCategory extends BaseEntity {
 
     /**
      * 类目id

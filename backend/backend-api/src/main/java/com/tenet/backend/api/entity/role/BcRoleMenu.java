@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.tenet.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,9 +20,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("bc_role_menu")
-public class BcRoleMenu implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class BcRoleMenu extends BaseEntity {
 
     /**
      * 主键

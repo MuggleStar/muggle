@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import com.tenet.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -19,9 +21,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("bc_role")
-public class BcRole implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class BcRole extends BaseEntity {
 
     /**
      * 主键

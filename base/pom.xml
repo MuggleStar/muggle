@@ -51,7 +51,7 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba-version}</version>
-                <type>pom</type>
+                <type>pom</type><!--type为pom，意味着我们可以将所有的jar包打包成一个pom-->
                 <scope>import</scope>
             </dependency>
             <!-- mybatis启动器 -->

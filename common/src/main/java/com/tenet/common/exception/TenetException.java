@@ -13,4 +13,10 @@ public class TenetException extends RuntimeException {
 
     private String message;
 
+    private TenetException() {
+    }
+
+    public TenetException(String message) {
+        this.message = message;
+    }
 }

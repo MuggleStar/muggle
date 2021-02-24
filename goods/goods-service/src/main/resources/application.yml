@@ -1,0 +1,32 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: tenet-goods
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/tenet-goods?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8
+    username: root
+    password: root
+  cloud:
+    alibaba:
+      nacos:
+        # Nacos 服务发现与注册配置
+        discovery:
+          server-addr: 127.0.0.1:8848
+
+dubbo:
+  application:
+    name: tenet-goods
+  protocol:
+    name: dubbo
+    port: 20880
+  registry:
+    address: nacos://127.0.0.1:8848
+    check: true
+    group: dubbo-dev
+    simplified: true
+    username: nacos
+    password: nacos
+  scan:
+    base-packages: com.tenet.goods.api.impl

@@ -1,0 +1,32 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: tenet-search
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/tenet-goods?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8
+    username: root
+    password: root
+
+  cloud:
+    alibaba:
+      nacos:
+        # Nacos 服务发现与注册配置
+        discovery:
+          server-addr: 127.0.0.1:8848
+
+
+dubbo:
+  application:
+    name: tenet-search
+  protocol:
+    name: dubbo
+    port: 20882
+  registry:
+    address: nacos://127.0.0.1:8848
+    check: false
+    group: dubbo-dev
+    simplified: false
+    username: nacos
+    password: nacos

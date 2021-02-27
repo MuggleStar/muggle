@@ -12,16 +12,16 @@ import java.util.List;
  * @since 2021/2/22
  */
 @Data
-public class PagDto<T> extends BaseEntity {
+public class PageDto<T> extends BaseEntity {
 
     /**
      * 页码
      */
-    private Integer pageNo;
+    private Long pageNo;
     /**
      * 每页数量
      */
-    private Integer pageSize;
+    private Long pageSize;
     /**
      * 总条数
      */
@@ -29,18 +29,25 @@ public class PagDto<T> extends BaseEntity {
     /**
      * 总页数
      */
-    private Integer totalPage;
+    private Long totalPage;
     /**
      * 当前页数据
      */
-    private List<T> items;
+    private List<T> result;
 
-    public PagDto(){
-        this.pageNo = 1;
-        this.pageSize = 15;
+    /**
+     * 参数
+     */
+    private T param;
+
+
+
+    public PageDto(){
+        this.pageNo = 1L;
+        this.pageSize = 15L;
     }
 
-    public PagDto(PagDto param){
+    public PageDto(PageDto param){
         this.pageNo = param.getPageNo();
         this.pageSize = param.getPageSize();
     }

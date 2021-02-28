@@ -10,8 +10,10 @@ import com.tenet.goods.api.entity.goods.GoSpu;
 import com.tenet.goods.api.query.goods.GoSpuQueryVo;
 import com.tenet.goods.service.goods.IGoSpuService;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,12 +28,23 @@ public class GoSkuApiService implements GoSkuApi {
     private IGoSpuService spuService;
 
     @Override
-    public PageDto<GoSpuDto> getGoSpuDtoByPage(PageDto<GoSpuQueryVo> param) {
+    public PageDto<List<GoSpuDto>> getGoSpuDtoByPage(PageDto<GoSpuQueryVo> param) {
 
         Page<GoSpu> goSpuByPage = spuService.getGoSpuByPage(param);
 
+        PageDto<List<GoSpuDto>> pagDto = new PageDto<>(param);
+        pagDto.setTotal(goSpuByPage.getTotal());
+        pagDto.setTotalPage(goSpuByPage.getPages());
 
-        PageDto<GoSpuDto> pagDto = new PageDto(param);
+        List<GoSpu> goSpuList = goSpuByPage.getRecords();
+
+        if (CollectionUtils.isEmpty(goSpuList)) {
+            return pagDto;
+        }
+
+        List<GoSpuDto> goSpuDtoList = new ArrayList<>();
+
+
 
         return pagDto;
     }

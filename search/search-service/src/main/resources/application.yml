@@ -10,11 +10,12 @@ spring:
     password: root
 
   cloud:
-    alibaba:
-      nacos:
-        # Nacos 服务发现与注册配置
-        discovery:
-          server-addr: 127.0.0.1:8848
+    nacos:
+      # Nacos 服务发现与注册配置
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        namespace: df36a156-07e7-4e8e-b423-ef5fd7987fc8
 
 
 dubbo:
@@ -30,3 +31,6 @@ dubbo:
     simplified: false
     username: nacos
     password: nacos
+    zone: dubbo
+    parameters:
+      namespace: df36a156-07e7-4e8e-b423-ef5fd7987fc8

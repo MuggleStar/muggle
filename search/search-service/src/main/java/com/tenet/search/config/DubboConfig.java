@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class DubboConfig {
 
 
-    @Reference(version = "1.0.0", group = "brandApi", check = false)
+    @Reference(version = "1.0.0", group = "goods", check = false)
     private GoBrandApi goBrandApi;
 
 

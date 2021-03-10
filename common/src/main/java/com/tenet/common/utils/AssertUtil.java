@@ -51,13 +51,13 @@ public class AssertUtil {
     }
 
 
-    public static void isEmpty(Collection<Object> collection, String message) {
+    public static void isEmpty(Collection<?> collection, String message) {
         if (!CollectionUtils.isEmpty(collection)) {
             error(message);
         }
     }
 
-    public static void notEmpty(Collection<Object> collection, String message) {
+    public static void notEmpty(Collection<?> collection, String message) {
         if (CollectionUtils.isEmpty(collection)) {
             error(message);
         }

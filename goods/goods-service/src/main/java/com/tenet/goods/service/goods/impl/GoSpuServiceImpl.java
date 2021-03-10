@@ -10,6 +10,7 @@ import com.tenet.goods.mapper.goods.GoSpuMapper;
 import com.tenet.goods.service.goods.IGoSpuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 /**
  * <p>
@@ -49,9 +50,12 @@ public class GoSpuServiceImpl extends ServiceImpl<GoSpuMapper, GoSpu> implements
         if (spuQueryVo.getUpdateTimeEnd() != null) {
             lambdaQueryWrapper.le(GoSpu :: getUpdateTime,spuQueryVo.getUpdateTimeEnd());
         }
-
+        if (!CollectionUtils.isEmpty(spuQueryVo.getGoSpuIdList())) {
+            lambdaQueryWrapper.in(GoSpu :: getId,spuQueryVo.getGoSpuIdList());
+        }
         lambdaQueryWrapper.orderByAsc(GoSpu :: getId);
 
-        return this.page(page, lambdaQueryWrapper);
+        Page<GoSpu> pageResult = this.page(page, lambdaQueryWrapper);
+        return pageResult;
     }
 }

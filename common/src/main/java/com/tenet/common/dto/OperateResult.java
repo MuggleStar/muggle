@@ -62,6 +62,21 @@ public class OperateResult<T> extends BaseEntity {
         );
     }
 
+    public static <T> OperateResult<T> noResult() {
+        return new OperateResult<>(
+                ResultTypeEnum.NO_RESULT.getCode(),
+                ResultTypeEnum.NO_RESULT.getMessage()
+        );
+    }
+
+    public static <T> OperateResult<T> noResult(T data) {
+        return new OperateResult<>(
+                ResultTypeEnum.NO_RESULT.getCode(),
+                ResultTypeEnum.NO_RESULT.getMessage(),
+                data
+        );
+    }
+
     public static <T> OperateResult<T> fail() {
         return new OperateResult<>(
                 ResultTypeEnum.FAIL.getCode(),

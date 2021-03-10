@@ -5,6 +5,7 @@ import com.tenet.goods.api.entity.goods.GoSpu;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author Madison
@@ -22,5 +23,7 @@ public class GoSpuQueryVo extends BaseEntity {
     private LocalDateTime updateTimeStart;
 
     private LocalDateTime updateTimeEnd;
+
+    private List<Long> goSpuIdList;
 
 }

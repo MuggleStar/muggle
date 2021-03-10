@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @author Madison
  * @since 2021/2/24
  */
-@Service(version = "1.0.0", group = "goods")
+@Service(version = "1.0.0", group = "tenet-goods")
 public class GoBrandApiService implements GoBrandApi {
 
     @Resource

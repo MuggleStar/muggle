@@ -9,6 +9,7 @@ package com.tenet.common.enums;
 public enum ResultTypeEnum {
 
     SUCCESS(200,"成功"),
+    NO_RESULT(204,"结果为空"),
     FAIL(401,"失败"),
     EXCEPTION(501,"失败，请联系管理员！"),
     ;

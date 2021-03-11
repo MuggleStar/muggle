@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * @author Madison
  * @since 2021/2/28
  */
-@Service(version = "1.0.0", group = "tenet-goods")
+@Service
 public class GoSkuApiService implements GoSpuApi {
 
 

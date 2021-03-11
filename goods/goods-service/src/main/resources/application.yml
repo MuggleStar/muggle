@@ -37,6 +37,13 @@ dubbo:
       namespace: df36a156-07e7-4e8e-b423-ef5fd7987fc8
   scan:
     base-packages: com.tenet.goods.api.impl
+  provider:
+    group: tenet
+    version: 1.0.0
+  consumer:
+    group: tenet
+    version: 1.0.0
+    check: false
 
 logging:
   level: {com: "debug"}

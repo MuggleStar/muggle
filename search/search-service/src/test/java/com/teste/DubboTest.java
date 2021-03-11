@@ -9,6 +9,7 @@ import com.tenet.goods.api.dto.goods.GoSpuDto;
 import com.tenet.goods.api.entity.brand.GoBrand;
 import com.tenet.goods.api.query.goods.GoSpuQueryVo;
 import com.tenet.search.SearchApplication;
+import org.apache.dubbo.config.annotation.Reference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,9 +26,9 @@ import javax.annotation.Resource;
 public class DubboTest {
 
 
-    @Resource
+    @Reference
     private GoBrandApi goBrandApi;
-    @Resource
+    @Reference
     private GoSpuApi goSpuApi;
 
 

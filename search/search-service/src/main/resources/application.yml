@@ -34,3 +34,10 @@ dubbo:
     zone: dubbo
     parameters:
       namespace: df36a156-07e7-4e8e-b423-ef5fd7987fc8
+  provider:
+    group: tenet
+    version: 1.0.0
+  consumer:
+    group: tenet
+    version: 1.0.0
+    check: false

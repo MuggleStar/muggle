@@ -3,7 +3,6 @@ package com.tenet.common.utils;
 import com.tenet.common.exception.TenetException;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
-import org.hibernate.validator.internal.util.StringHelper;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;

@@ -3,11 +3,11 @@ server:
 spring:
   application:
     name: tenet-search
-
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/tenet-goods?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8
-    username: root
-    password: root
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: 127.0.0.1:9200
 
   cloud:
     nacos:

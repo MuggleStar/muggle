@@ -55,7 +55,6 @@ public class GoSpuServiceImpl extends ServiceImpl<GoSpuMapper, GoSpu> implements
         }
         lambdaQueryWrapper.orderByAsc(GoSpu :: getId);
 
-        Page<GoSpu> pageResult = this.page(page, lambdaQueryWrapper);
-        return pageResult;
+        return this.page(page, lambdaQueryWrapper);
     }
 }

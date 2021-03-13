@@ -4,6 +4,7 @@ import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -50,14 +51,14 @@ public class JsonUtil {
      * json转对象
      *
      * @param json
-     * @param cls
+     * @param clazz
      * @param <T>
      * @return
      */
-    public static <T> T fromJson(String json, Class<T> cls) {
+    public static <T> T fromJson(String json, Class<T> clazz) {
         T t = null;
         if (gson != null) {
-            t = gson.fromJson(json, cls);
+            t = gson.fromJson(json, clazz);
         }
         return t;
     }
@@ -112,9 +113,25 @@ public class JsonUtil {
     public static <T> Map<String, T> json2Map(String json, Class<T> clazz) {
         Map<String, T> map = null;
         if (gson != null) {
-            map = gson.fromJson(json, new TypeToken<Map<String, T>>() {
-            }.getType());
+            map = gson.fromJson(json, new TypeToken<Map<String, String>>() {}.getType());
         }
         return map;
     }
+
+
+    /**
+     * json转 Map<String, List<T>>
+     *
+     * @param json
+     * @param <T>
+     * @return
+     */
+    public static <T> Map<String, List<T>> json2ListMap(String json, Class<T> clazz) {
+        Map<String, List<T>> map = new HashMap<>();
+        if (gson != null) {
+            map = gson.fromJson(json, new TypeToken<Map<String, List<T>>>() {}.getType());
+        }
+        return map;
+    }
+
 }

@@ -12,7 +12,7 @@ import com.tenet.goods.api.query.goods.GoSpuQueryVo;
 import com.tenet.goods.service.goods.IGoSkuService;
 import com.tenet.goods.service.goods.IGoSpuDetailService;
 import com.tenet.goods.service.goods.IGoSpuService;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * @author Madison
  * @since 2021/2/28
  */
-@Service
+@DubboService
 public class GoSkuApiService implements GoSpuApi {
 
 

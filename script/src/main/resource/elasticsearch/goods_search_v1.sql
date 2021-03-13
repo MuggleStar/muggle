@@ -47,14 +47,27 @@ PUT goods_search_v1
         "type": "integer",
         "store": true
       },
-      "spec": {
+      "genericSpec": {
         "type": "nested",
         "properties": {
-          "specName": {
+          "key": {
             "type": "keyword",
             "store": true
           },
-          "specValue": {
+          "value": {
+            "type": "keyword",
+            "store": true
+          }
+        }
+      },
+      "specialSpec": {
+        "type": "nested",
+        "properties": {
+          "key": {
+            "type": "keyword",
+            "store": true
+          },
+          "value": {
             "type": "keyword",
             "store": true
           }

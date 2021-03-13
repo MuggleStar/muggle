@@ -13,7 +13,7 @@ import java.util.Map;
  * @since 2021/3/12
  */
 @Data
-@Document(indexName = "goods_search_v1")
+@Document(indexName = "goods_search")
 public class GoodsSearch {
 
     @Id
@@ -55,7 +55,11 @@ public class GoodsSearch {
     /**
      * 属性参数
      */
-    private Map<String, Object> spec;
+    private Map<String, String> genericSpec;
+    /**
+     * 特色属性参数
+     */
+    private Map<String, List<String>> specialSpec;
 
 
 

@@ -9,13 +9,12 @@ import com.tenet.goods.api.dto.goods.GoSpuDto;
 import com.tenet.goods.api.entity.brand.GoBrand;
 import com.tenet.goods.api.query.goods.GoSpuQueryVo;
 import com.tenet.search.SearchApplication;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
 
 /**
  * @author Madison
@@ -26,9 +25,9 @@ import javax.annotation.Resource;
 public class DubboTest {
 
 
-    @Reference
+    @DubboReference
     private GoBrandApi goBrandApi;
-    @Reference
+    @DubboReference
     private GoSpuApi goSpuApi;
 
 

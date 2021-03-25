@@ -83,3 +83,81 @@ PUT goods_search_v1
   }
 }
 
+
+
+GET goods_search/_search
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "nested": {
+            "path": "genericSpec",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "bool": {
+                      "must": [
+                        {
+                          "term": {
+                            "genericSpec.key": "1"
+                          }
+                        },
+                        {
+                          "term": {
+                            "genericSpec.value": "华为（HUAWEI）"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "nested": {
+            "path": "specialSpec",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "bool": {
+                      "must": [
+                        {
+                          "term": {
+                            "specialSpec.key": "4"
+                          }
+                        }
+                      ],
+                      "should": [
+                        {
+                          "term": {
+                            "specialSpec.value": "幻夜黑"
+                          }
+                        },
+                        {
+                          "term": {
+                            "specialSpec.value": "极光蓝"
+                          }
+                        }
+                      ],"minimum_should_match": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+
+
+
+

@@ -84,7 +84,6 @@ PUT goods_search_v1
 }
 
 
-
 GET goods_search/_search
 {
   "query": {
@@ -151,11 +150,24 @@ GET goods_search/_search
             }
           }
         }
-      ]
+      ],
+      "should": [
+        {"term": {
+          "all": "手机"
+          }
+        },{
+          "term": {
+            "goCategoryIdThree":"76"
+          }
+        }
+      ],"minimum_should_match": 1
     }
+  },
+  "rescore": {
+    "query": {},
+    "window_size": 50
   }
 }
-
 
 
 

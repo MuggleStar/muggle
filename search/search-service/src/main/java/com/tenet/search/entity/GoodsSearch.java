@@ -15,7 +15,7 @@ import java.util.Map;
  * @since 2021/3/12
  */
 @Data
-@Document(indexName = "goods_search")
+@Document(indexName = "goods_search_alias")
 public class GoodsSearch {
 
     @Id

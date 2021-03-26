@@ -1,5 +1,8 @@
 PUT goods_search_v1
 {
+"aliases": {
+    "goods_search_alias": {}
+  },
   "settings": {
     "index": {
       "number_of_shards": "2",
